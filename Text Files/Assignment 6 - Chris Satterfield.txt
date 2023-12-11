@@ -1,0 +1,141 @@
+-- Assignment 6 - Chris Satterfield
+-- SQL Exercise_2 - 10/20/2023
+
+-- Part A
+
+CREATE TABLE Customers_JCS (
+    customerid INT NOT NULL,
+    firstname VARCHAR(50),
+    lastname VARCHAR(50),
+    city VARCHAR(50),
+    state VARCHAR(25),
+    CONSTRAINT pk_customers_JCS PRIMARY KEY (customerid)
+);
+
+INSERT INTO Customers_JCS (customerid, firstname, lastname, city, state) VALUES 
+(10101, 'John', 'Gray', 'Lynden', 'Washington'),
+(10298, 'Leroy', 'Brown', 'Pinetop', 'Arizona'),
+(10339, 'Anthony', 'Sanchez', 'Winslow', 'Arizona'),
+(10357, 'Jared', 'McGregor', 'San Diego', 'California'),
+(10409, 'Caroline', 'Ziadie', 'New Orleans', 'Louisiana'),
+(10410, 'Mary Ann', 'Howell', 'Charleston', 'South Carolina'),
+(10429, 'Sarah', 'Graham', 'Greensboro', 'North Carolina'),
+(10415, 'Deborah', 'Taud', 'New York', 'New York'),
+(10428, 'Robert', 'Gamble', 'Miami', 'Florida'),
+(10438, 'Kevin', 'Smith', 'Durango', 'Colorado'),
+(10449, 'Isabela', 'Moore', 'Yuma', 'Arizona');
+
+
+CREATE TABLE Items_Ordered_JCS (
+    ID INT NOT NULL,
+    customerid INT,
+    order_date DATE,
+    item VARCHAR(100),
+    quantity INT,
+    price DECIMAL(8, 2),
+    CONSTRAINT pk_items_ordered_JCS PRIMARY KEY (ID),
+    CONSTRAINT fk_customerid_JCS FOREIGN KEY (customerid) REFERENCES Customers_JCS(customerid)
+);
+
+INSERT INTO Items_Ordered_JCS (ID, customerid, order_date, item, quantity, price) VALUES 
+(1, 10101, '1999-06-30', 'Raft', 1, 58.00),
+(2, 10339, '1999-07-27', 'Umbrella', 1, 4.50),
+(3, 10449, '1999-08-14', 'Ski Poles', 2, 25.50),
+(4, 10415, '1999-12-18', 'Tent', 1, 88.00),
+(5, 10438, '1999-12-02', 'Pillow', 1, 8.50),
+(6, 10449, '1999-12-22', 'Canoe', 1, 280.00),
+(7, 10101, '2000-01-02', 'Lantern', 1, 16.00),
+(8, 10438, '2000-01-18', 'Tent', 1, 79.99),
+(9, 10409, '2000-02-29', 'Flashlight', 1, 4.50),
+(10, 10101, '2000-03-08', 'Sleeping Bag', 2, 88.70),
+(11, 10298, '2000-04-01', 'Ear Muffs', 1, 12.50);
+
+
+-- Part B
+
+-- 1
+SELECT firstname, city FROM Customers_JCS;
+
+firstname	city
+John	Lynden
+Leroy	Pinetop
+Anthony	Winslow
+Jared	San Diego
+Caroline	New Orleans
+Mary Ann	Charleston
+Deborah	New York
+Robert	Miami
+Sarah	Greensboro
+Kevin	Durango
+Isabela	Yuma
+
+-- 2
+SELECT firstname, lastname, city FROM Customers_JCS WHERE state != 'Arizona';
+
+firstname	lastname	city
+John	Gray	Lynden
+Jared	McGregor	San Diego
+Caroline	Ziadie	New Orleans
+Mary Ann	Howell	Charleston
+Deborah	Taud	New York
+Robert	Gamble	Miami
+Sarah	Graham	Greensboro
+Kevin	Smith	Durango
+
+-- 3
+SELECT * FROM Customers_JCS WHERE state LIKE '%Carolina%';
+
+customerid	firstname	lastname	city	state
+10410	Mary Ann	Howell	Charleston	South Carolina
+10429	Sarah	Graham	Greensboro	North Carolina
+
+-- 4
+SELECT firstname, lastname FROM Customers_JCS WHERE lastname LIKE 'S%';
+
+firstname	lastname
+Anthony	Sanchez
+Kevin	Smith
+
+-- 5
+SELECT * FROM Customers_JCS WHERE firstname LIKE '%Mary%';
+
+customerid	firstname	lastname	city	state
+10410	Mary Ann	Howell	Charleston	South Carolina
+
+-- 6
+SELECT customerid, item, price FROM Items_Ordered_JCS WHERE customerid = 10449;
+
+customerid	item	price
+10449	Ski Poles	25.50
+10449	Canoe	280.00
+
+-- 7
+SELECT * FROM Items_Ordered_JCS WHERE item = 'Tent';
+
+ID	customerid	order_date	item	quantity	price
+4	10415	1999-12-18	Tent	1	88.00
+8	10438	2000-01-18	Tent	1	79.99
+
+-- 8
+SELECT customerid, order_date, item FROM Items_Ordered_JCS WHERE item LIKE '%T';
+
+customerid	order_date	item
+10101	1999-06-30	Raft
+10415	1999-12-18	Tent
+10438	2000-01-18	Tent
+10409	2000-02-29	Flashlight
+
+-- 9
+SELECT DISTINCT item FROM Items_Ordered_JCS;
+
+item
+Canoe
+Ear Muffs
+Flashlight
+Lantern
+Pillow
+Raft
+Ski Poles
+Sleeping Bag
+Tent
+Umbrella

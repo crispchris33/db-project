@@ -80,7 +80,8 @@
             </div>
         </div>
     </nav>
-
+    
+    <!-- main -->
     <div class="container mt-5">
         <div class="form-container">
             <div class="d-flex justify-content-between align-items-center mb-3">
@@ -88,10 +89,17 @@
                 <span>David (dconvoy) | <a href="#" style="text-decoration: none;">Log out</a></span>
             </div>
 
-            <div class="bordered-section mb-3">
-                <h4>Search User</h4>
-                <input type="text" class="form-control" value="Terry Stewart" disabled>
-            </div>
+            <div class="bordered-section mb-6">
+                <div class="row">
+                    <div class="col-md-10">
+                        <h4>Search User</h4>
+                        <input type="text" class="form-control" value="Terry Stewart" disabled>
+                    </div>
+                    <div class="col-md-2 d-flex align-items-center">
+                        <button type="button" class="btn btn-secondary w-100">Member List</button>
+                    </div>
+                </div>
+            </div>            
 
             <div class="bordered-section mb-3">
                 <h4 class="section-title">Member Information</h4>
@@ -116,14 +124,22 @@
                 <h4 class="section-title">Itinerary Selection</h4>
                 <div class="row">
                     <div class="col-md-6 form-group">
-                        <label for="country">Existing Member Itineraries</label>
+                        <label for="itinerary-select">Existing Member Itineraries</label>
                         <select class="form-control" id="itinerary-select">
-                            <option>Select Itinerary</option>
-                            <!-- Add country options here -->
+                            <option>8</option>
                         </select>
+                        <div class="mt-4">
+                            <button type="button" class="btn btn-success mr-1">Create New Itinerary</button>
+                            <button type="button" class="btn btn-warning">Itinerary History</button>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <p><strong>Itinerary Details:</strong></p>
+                        <p>ItineraryID: 8</p>
+                        <p>StartDate: 2023-11-20</p>
+                        <p>EndDate: 11/28/2023</p>
                     </div>
                 </div>
-                <button type="button" class="btn btn-secondary">Create New Itinerary</button>
             </div>
             <div class="bordered-section">
                 <h4 class="section-title">Location Selection</h4>
@@ -131,26 +147,63 @@
                     <div class="col-md-4 form-group">
                         <label for="country">Country</label>
                         <select class="form-control" id="country">
-                            <option>Select Country</option>
-                            <!-- Add country options here -->
+                            <option>England</option>
                         </select>
                     </div>
                     <div class="col-md-4 form-group">
                         <label for="state">State</label>
                         <select class="form-control" id="state" disabled style="background-color: #e9ecef;">
-                            <option>Select State</option>
-                            <!-- Add state options here -->
+                            <option>None</option>
                         </select>
                     </div>
                     <div class="col-md-4 form-group">
                         <label for="city">City</label>
                         <select class="form-control" id="city" disabled style="background-color: #e9ecef;">
-                            <option>Select City</option>
-                            <!-- Add city options here -->
+                            <option>London</option>
                         </select>
                     </div>
                 </div>
             </div>
+
+            <!-- select attraction -->
+
+            <div class="bordered-section">
+                <h4 class="section-title">Select Attraction</h4>
+                <div class="row mb-3">
+                    <div class="col-md-6 form-group">
+                        <label for="reservation-date">Date</label>
+                        <input type="date" class="form-control" id="reservation-date">
+                    </div>
+                    <div class="col-md-6 form-group">
+                        <label for="number-of-people">Number of People</label>
+                        <input type="number" class="form-control" id="number-of-people" min="1">
+                    </div>
+                </div>
+            
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th>Attraction Name</th>
+                            <th>City</th>
+                            <th>Category</th>
+                            <th>Entry Fee</th>
+                            <th>Action</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <!-- Rows of attractions will be dynamically populated here -->
+                        <tr>
+                            <td>Sample Attraction</td>
+                            <td>Sample City</td>
+                            <td>Sample Category</td>
+                            <td>$20</td>
+                            <td><button type="button" class="btn btn-primary">Make Reservation</button></td>
+                        </tr>
+                        <!-- More rows as needed -->
+                    </tbody>
+                </table>
+            </div>
+            
         </div>
     </div>
 

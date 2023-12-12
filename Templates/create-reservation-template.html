@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tourism Through Travel Club - Create Reservation</title>  <!-- **************** -->
+
+    <!--css start-->
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body {
+            background-color: #f4f4f4; /*page background*/
+        }
+        .navbar-brand-logo {
+            font-size: 24px;
+            color: #007bff; /*primary color*/
+        }
+        .navbar, .footer {
+            background-color: #fff; /*navbar and footer */
+            box-shadow: 0 2px 4px rgba(0,0,0,.1); /*shadow*/
+        }
+        .footer {
+            padding: 10px 0;
+            text-align: center;
+        }
+        .form-container {
+            background-color: #fff;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0,0,0,.05);
+            margin-top: 20px;
+            margin-bottom: 20px;
+        }
+        .form-title {
+            margin-bottom: 20px;
+        }
+        .bordered-section {
+            border: 1px solid #ddd;
+            padding: 15px;
+            margin-bottom: 20px;
+            border-radius: 5px;
+        }
+        .section-title {
+            margin-bottom: 15px;
+            color: #007bff;
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-light">
+        <div class="container">
+            <a class="navbar-brand" href="#">Tourism Through Travel Club</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Members</a>
+                    </li>
+                    <li class="nav-item active">
+                        <a class="nav-link" href="#">Reservations</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link " href="#">Locations</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Admin</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#"><i class="fas fa-cog"></i></a>
+                    </li>
+                    <li class="nav-item">
+                        <form class="form-inline">
+                            <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+                            <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+                        </form>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container mt-5">
+        <div class="form-container">
+            <div class="d-flex justify-content-between align-items-center mb-3">
+                <h2>Create Reservation</h2>
+                <span>David (dconvoy) | <a href="#" style="text-decoration: none;">Log out</a></span>
+            </div>
+
+            <div class="bordered-section mb-3">
+                <h4>Search User</h4>
+                <input type="text" class="form-control" value="Terry Stewart" disabled>
+            </div>
+
+            <div class="bordered-section mb-3">
+                <h4 class="section-title">Member Information</h4>
+                <table class="table">
+                    <tbody>
+                        <tr>
+                            <th>Member ID</th><td>8</td>
+                            <th>First Name</th><td>Terry</td>
+                            <th>Last Name</th><td>Stewart</td>
+                        </tr>
+                        <tr>
+                            <th>Address</th><td>5226 University Drive</td>
+                            <th>City</th><td>Plano</td>
+                            <th>State</th><td>TX</td>
+                        </tr>
+                        <!-- Other Member Information -->
+                    </tbody>
+                </table>
+            </div>
+
+            <div class="bordered-section">
+                <h4 class="section-title">Itinerary Selection</h4>
+                <div class="row">
+                    <div class="col-md-6 form-group">
+                        <label for="country">Existing Member Itineraries</label>
+                        <select class="form-control" id="itinerary-select">
+                            <option>Select Itinerary</option>
+                            <!-- Add country options here -->
+                        </select>
+                    </div>
+                </div>
+                <button type="button" class="btn btn-secondary">Create New Itinerary</button>
+            </div>
+            <div class="bordered-section">
+                <h4 class="section-title">Location Selection</h4>
+                <div class="row">
+                    <div class="col-md-4 form-group">
+                        <label for="country">Country</label>
+                        <select class="form-control" id="country">
+                            <option>Select Country</option>
+                            <!-- Add country options here -->
+                        </select>
+                    </div>
+                    <div class="col-md-4 form-group">
+                        <label for="state">State</label>
+                        <select class="form-control" id="state" disabled style="background-color: #e9ecef;">
+                            <option>Select State</option>
+                            <!-- Add state options here -->
+                        </select>
+                    </div>
+                    <div class="col-md-4 form-group">
+                        <label for="city">City</label>
+                        <select class="form-control" id="city" disabled style="background-color: #e9ecef;">
+                            <option>Select City</option>
+                            <!-- Add city options here -->
+                        </select>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="footer">
+        &copy; 2023 Tourism Through Travel Club
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.0.5/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>

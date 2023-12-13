@@ -57,7 +57,11 @@ SELECT
     Phone AS "Member Phone",
     MbrEmail AS "Member Email"
 FROM Member
-WHERE PremiereMbr = 1;   --1 premium, 0 non premium
+WHERE PremiereMbr = 1;   
+
+
+
+--1 premium, 0 non premium
 
 --7
 SELECT Attraction.AttractionName, Location.City, Location.LocationState, Location.Country
@@ -84,7 +88,12 @@ From Attraction JOIN Reservation on Reservation.AttractionID = Attraction.Attrac
 Order By Attraction.AttractionName ASC;
 
 --11
-SELECT Member.MemberID, Member.MemberFName, Member.MemberLName, Payment.PaymentDate, DATEADD(year, 1, PaymentDate) AS ExpirationDate
+SELECT 
+    Member.MemberID, 
+    Member.MemberFName, 
+    Member.MemberLName, 
+    Payment.PaymentDate, 
+    DATEADD(year, 1, PaymentDate) AS ExpirationDate
 FROM Member, Payment
 WHERE Member.MemberID = Payment.MemberID;
 

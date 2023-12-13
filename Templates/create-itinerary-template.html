@@ -85,7 +85,7 @@
     <div class="container mt-5">
         <div class="form-container">
             <div class="d-flex justify-content-between align-items-center mb-3">
-                <h2>Create Reservation</h2>
+                <h2>Create Itinerary</h2>
                 <span>David (dconvoy) | <a href="#" style="text-decoration: none;">Log out</a></span>
             </div>
 
@@ -120,98 +120,24 @@
                 </table>
             </div>
 
-            <!-- itinerary selection-->
+            <!-- Create Itinerary Section -->
             <div class="bordered-section">
-                <h4 class="section-title">Itinerary Selection</h4>
+                <h4 class="section-title">Create Itinerary</h4>
                 <div class="row">
                     <div class="col-md-6 form-group">
-                        <label for="itinerary-select">Existing Member Itineraries</label>
-                        <select class="form-control" id="itinerary-select">
-                            <option>8</option>
-                        </select>
-                        <div class="mt-4">
-                            <button type="button" class="btn btn-success mr-1">Create New Itinerary</button>
-                            <button type="button" class="btn btn-warning">Itinerary History</button>
-                        </div>
-                    </div>
-                    <div class="col-md-6">
-                        <p><strong>Itinerary Details:</strong></p>
-                        <p>ItineraryID: 8</p>
-                        <p>StartDate: 2023-11-20</p>
-                        <p>EndDate: 2023-11-28</p>
-                    </div>
-                </div>
-            </div>
-
-            <!-- location selection-->
-            <div class="bordered-section">
-                <h4 class="section-title">Location Selection</h4>
-                <div class="row">
-                    <div class="col-md-4 form-group">
-                        <label for="country">Country</label>
-                        <select class="form-control" id="country">
-                            <option>England</option>
-                        </select>
-                    </div>
-                    <div class="col-md-4 form-group">
-                        <label for="state">State</label>
-                        <select class="form-control" id="state" disabled style="background-color: #e9ecef;">
-                            <option>None</option>
-                        </select>
-                    </div>
-                    <div class="col-md-4 form-group">
-                        <label for="city">City</label>
-                        <select class="form-control" id="city">
-                            <option>London</option>
-                        </select>
-                    </div>
-                </div>
-            </div>
-
-            <!-- select attraction -->
-
-            <div class="bordered-section">
-                <h4 class="section-title">Select Attraction</h4>
-                <div class="row mb-3">
-                    <div class="col-md-6 form-group">
-                        <label for="reservation-date">Date</label>
-                        <input type="date" class="form-control" id="reservation-date" value="2023-11-23">
+                        <label for="start-date">Start Date</label>
+                        <input type="date" class="form-control" id="start-date">
                     </div>
                     <div class="col-md-6 form-group">
-                        <label for="number-of-people">Number of People</label>
-                        <input type="number" class="form-control" id="number-of-people" min="1" value="5">
+                        <label for="end-date">End Date</label>
+                        <input type="date" class="form-control" id="end-date">
                     </div>
                 </div>
-            
-                <table class="table">
-                    <thead>
-                        <tr>
-                            <th>Attraction Name</th>
-                            <th>City</th>
-                            <th>Category</th>
-                            <th>Entry Fee</th>
-                            <th>Action</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td>London Eye</td>
-                            <td>London</td>
-                            <td>Statues and Monuments</td>
-                            <td>$29.99 x 5 = $149.95</td>
-                            <td><button type="button" class="btn btn-primary">Make Reservation</button></td>
-                        </tr>
-                        <tr>
-                            <td>National Gallery</td>
-                            <td>London</td>
-                            <td>Art</td>
-                            <td>$0.00 x 5 = $0.00</td>
-                            <td><button type="button" class="btn btn-primary">Make Reservation</button></td>
-                        </tr>
-                    </tbody>
-                </table>
+                <div class="mt-4">
+                    <button type="submit" class="btn btn-success">Confirm</button>
+                    <button type="reset" class="btn btn-secondary">Reset</button>
+                </div>
             </div>
-            
         </div>
     </div>
 
